@@ -19,3 +19,11 @@ export const buttonLinkPropTypes = PropTypes.shape({
   text: PropTypes.string.isRequired,
   newTab: PropTypes.bool,
 })
+
+export interface PageModel {
+  locale?: any
+  locales?: any
+  defaultLocale?: any
+  slug?: any
+  localizations?: any
+}

@@ -1,7 +1,5 @@
-import { getStrapiMedia } from "utils/media"
 import Image from "next/image"
-import PropTypes from "prop-types"
-import { mediaPropTypes } from "utils/types"
+import { getStrapiMedia } from "utils/media"
 
 const NextImage = ({ media, ...props }) => {
   const { url, alternativeText } = media
@@ -29,9 +27,9 @@ const NextImage = ({ media, ...props }) => {
   )
 }
 
-Image.propTypes = {
-  media: mediaPropTypes.isRequired,
-  className: PropTypes.string,
-}
+// Image.propTypes = {
+//   media: mediaPropTypes.isRequired,
+//   className: PropTypes.string,
+// }
 
 export default NextImage

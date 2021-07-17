@@ -1,16 +1,13 @@
-import { useState } from "react"
-import PropTypes from "prop-types"
 import Link from "next/link"
 import { useRouter } from "next/router"
-
-import { getButtonAppearance } from "utils/button"
-import { mediaPropTypes, linkPropTypes, buttonLinkPropTypes } from "utils/types"
+import { useState } from "react"
 import { MdMenu } from "react-icons/md"
-import MobileNavMenu from "./mobile-nav-menu"
-import ButtonLink from "./button-link"
-import NextImage from "./image"
-import CustomLink from "./custom-link"
+import { getButtonAppearance } from "utils/button"
 import LocaleSwitch from "../locale-switch"
+import ButtonLink from "./button-link"
+import CustomLink from "./custom-link"
+import NextImage from "./image"
+import MobileNavMenu from "./mobile-nav-menu"
 
 const Navbar = ({ navbar, pageContext }) => {
   const router = useRouter()
@@ -81,16 +78,16 @@ const Navbar = ({ navbar, pageContext }) => {
   )
 }
 
-Navbar.propTypes = {
-  navbar: PropTypes.shape({
-    logo: PropTypes.shape({
-      image: mediaPropTypes,
-      url: PropTypes.string,
-    }),
-    links: PropTypes.arrayOf(linkPropTypes),
-    button: buttonLinkPropTypes,
-  }),
-  initialLocale: PropTypes.string,
-}
+// Navbar.propTypes = {
+//   navbar: PropTypes.shape({
+//     logo: PropTypes.shape({
+//       image: mediaPropTypes,
+//       url: PropTypes.string,
+//     }),
+//     links: PropTypes.arrayOf(linkPropTypes),
+//     button: buttonLinkPropTypes,
+//   }),
+//   initialLocale: PropTypes.string,
+// }
 
 export default Navbar

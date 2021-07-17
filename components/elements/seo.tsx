@@ -1,9 +1,11 @@
 import { NextSeo } from "next-seo"
-import PropTypes from "prop-types"
 import { getStrapiMedia } from "utils/media"
-import { mediaPropTypes } from "utils/types"
 
-const Seo = ({ metadata }) => {
+export type SeoProps = {
+  metadata: any
+}
+
+const Seo = ({ metadata }: SeoProps) => {
   // Prevent errors if no metadata was set
   if (!metadata) return null
 
@@ -18,7 +20,7 @@ const Seo = ({ metadata }) => {
         // Only include OG image if we have it
         // Careful: if you disable image optimization in Strapi, this will break
         ...(metadata.shareImage && {
-          images: Object.values(metadata.shareImage.formats).map((image) => {
+          images: Object.values(metadata.shareImage.formats).map((image: any) => {
             return {
               url: getStrapiMedia(image.url),
               width: image.width,
@@ -37,14 +39,14 @@ const Seo = ({ metadata }) => {
   )
 }
 
-Seo.propTypes = {
-  metadata: PropTypes.shape({
-    metaTitle: PropTypes.string.isRequired,
-    metaDescription: PropTypes.string.isRequired,
-    shareImage: mediaPropTypes,
-    twitterCardType: PropTypes.string,
-    twitterUsername: PropTypes.string,
-  }),
-}
+// Seo.propTypes = {
+//   metadata: PropTypes.shape({
+//     metaTitle: PropTypes.string.isRequired,
+//     metaDescription: PropTypes.string.isRequired,
+//     shareImage: mediaPropTypes,
+//     twitterCardType: PropTypes.string,
+//     twitterUsername: PropTypes.string,
+//   }),
+// }
 
 export default Seo

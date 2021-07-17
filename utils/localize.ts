@@ -1,6 +1,7 @@
 import { fetchAPI } from "./api"
+import { PageModel } from "./types"
 
-export async function getLocalizedPage(targetLocale, pageContext) {
+export async function getLocalizedPage(targetLocale: any, pageContext: any) {
   const localization = pageContext.localizations.find(
     (localization) => localization.locale === targetLocale
   )
@@ -8,7 +9,7 @@ export async function getLocalizedPage(targetLocale, pageContext) {
   return localePage
 }
 
-export function localizePath(page) {
+export function localizePath(page: PageModel): string {
   const { locale, defaultLocale, slug } = page
 
   if (locale === defaultLocale) {
@@ -20,7 +21,9 @@ export function localizePath(page) {
   return `/${locale}/${slug}`
 }
 
-export function getLocalizedPaths(page) {
+export function getLocalizedPaths(
+  page: PageModel
+): Array<{ locale: string; href: string }> {
   const paths = page.locales.map((locale) => {
     return {
       locale: locale,

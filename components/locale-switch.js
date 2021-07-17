@@ -1,13 +1,12 @@
-import { useEffect, useState, useRef } from "react"
+import { getLocalizedPage, localizePath } from "@utils/localize"
+import Cookies from "js-cookie"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import PropTypes from "prop-types"
-import Link from "next/link"
-
-import Cookies from "js-cookie"
+import { useEffect, useRef, useState } from "react"
 import { MdExpandMore } from "react-icons/md"
-import WorldIcon from "./icons/world"
-
 import { useOnClickOutside } from "../utils/hooks"
+import WorldIcon from "./icons/world"
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -73,7 +72,7 @@ const LocaleSwitch = ({ pageContext }) => {
         {pageContext.localizedPaths &&
           pageContext.localizedPaths.map(({ href, locale }) => {
             return (
-              <Link href={href} key={locale} locale={locale} role="option" passHref>
+              <Link href={href} key={locale} locale={locale} data-role="option" passHref>
                 <p
                   onClick={() => handleLocaleChange(locale)}
                   className="capitalize hover:bg-primary-50 hover:text-primary-600  cursor-pointer p-2 rounded-md text-center hover:text-primary-600"

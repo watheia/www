@@ -3,13 +3,13 @@ module.exports = {
     locales: ["en", "fr"],
     defaultLocale: "en",
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/home",
-        permanent: false,
-      },
-    ]
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/home",
+  //       permanent: false,
+  //     },
+  //   ]
+  // },
 }

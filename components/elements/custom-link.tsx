@@ -1,8 +1,6 @@
 import Link from "next/link"
-import PropTypes from "prop-types"
-import { linkPropTypes } from "utils/types"
 
-const CustomLink = ({ link, children }) => {
+const CustomLink = ({ link, children, locale = "en" }) => {
   const isInternalLink = link.url.startsWith("/")
 
   // For internal links, use the Next.js Link component
@@ -30,10 +28,10 @@ const CustomLink = ({ link, children }) => {
   )
 }
 
-CustomLink.propTypes = {
-  link: linkPropTypes,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
-    .isRequired,
-}
+// CustomLink.propTypes = {
+//   link: linkPropTypes,
+//   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+//     .isRequired,
+// }
 
 export default CustomLink
