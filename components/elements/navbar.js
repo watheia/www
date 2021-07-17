@@ -85,12 +85,12 @@ Navbar.propTypes = {
   navbar: PropTypes.shape({
     logo: PropTypes.shape({
       image: mediaPropTypes,
-      url: PropTypes.string
+      url: PropTypes.string,
     }),
     links: PropTypes.arrayOf(linkPropTypes),
-    button: buttonLinkPropTypes
+    button: buttonLinkPropTypes,
   }),
-  initialLocale: PropTypes.string
+  initialLocale: PropTypes.string,
 }
 
 export default Navbar

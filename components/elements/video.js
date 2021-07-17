@@ -23,7 +23,7 @@ Video.propTypes = {
   poster: mediaPropTypes,
   className: PropTypes.string,
   controls: PropTypes.bool,
-  autoPlay: PropTypes.bool
+  autoPlay: PropTypes.bool,
 }
 
 export default Video

@@ -22,16 +22,16 @@ const Seo = ({ metadata }) => {
             return {
               url: getStrapiMedia(image.url),
               width: image.width,
-              height: image.height
+              height: image.height,
             }
-          })
-        })
+          }),
+        }),
       }}
       // Only included Twitter data if we have it
       twitter={{
         ...(metadata.twitterCardType && { cardType: metadata.twitterCardType }),
         // Handle is the twitter username of the content creator
-        ...(metadata.twitterUsername && { handle: metadata.twitterUsername })
+        ...(metadata.twitterUsername && { handle: metadata.twitterUsername }),
       }}
     />
   )
@@ -43,8 +43,8 @@ Seo.propTypes = {
     metaDescription: PropTypes.string.isRequired,
     shareImage: mediaPropTypes,
     twitterCardType: PropTypes.string,
-    twitterUsername: PropTypes.string
-  })
+    twitterUsername: PropTypes.string,
+  }),
 }
 
 export default Seo

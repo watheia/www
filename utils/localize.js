@@ -24,7 +24,7 @@ export function getLocalizedPaths(page) {
   const paths = page.locales.map((locale) => {
     return {
       locale: locale,
-      href: localizePath({ ...page, locale })
+      href: localizePath({ ...page, locale }),
     }
   })
 

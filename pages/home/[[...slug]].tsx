@@ -1,9 +1,9 @@
+import Seo from "@components/elements/seo"
+import Layout from "@components/layout"
+import Sections from "@components/sections"
 import ErrorPage from "next/error"
-import { getPageData, fetchAPI, getGlobalData } from "utils/api"
-import Sections from "@/components/sections"
-import Seo from "@/components/elements/seo"
 import { useRouter } from "next/router"
-import Layout from "@/components/layout"
+import { fetchAPI, getGlobalData, getPageData } from "utils/api"
 import { getLocalizedPaths } from "utils/localize"
 
 // The file is called [[...slug]].js because we're using Next's
@@ -42,14 +42,14 @@ export async function getStaticPaths(context) {
 
   const pages = await (await Promise.all(allPages)).flat()
 
-  const paths = pages.map((page) => {
+  const paths = pages.map((page: any) => {
     // Decompose the slug that was saved in Strapi
     const slugArray = !page.slug ? false : page.slug.split("/")
 
     return {
       params: { slug: slugArray },
       // Specify the locale to render
-      locale: page.locale
+      locale: page.locale,
     }
   })
 
@@ -80,7 +80,7 @@ export async function getStaticProps(context) {
     locales,
     defaultLocale,
     slug,
-    localizations
+    localizations,
   }
 
   const localizedPaths = getLocalizedPaths(pageContext)
@@ -93,9 +93,9 @@ export async function getStaticProps(context) {
       global: globalLocale,
       pageContext: {
         ...pageContext,
-        localizedPaths
-      }
-    }
+        localizedPaths,
+      },
+    },
   }
 }
 

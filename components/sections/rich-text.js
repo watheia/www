@@ -11,8 +11,8 @@ const RichText = ({ data }) => {
 
 RichText.propTypes = {
   data: PropTypes.shape({
-    content: PropTypes.string
-  })
+    content: PropTypes.string,
+  }),
 }
 
 export default RichText

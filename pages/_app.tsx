@@ -1,11 +1,10 @@
-import App from "next/app"
-import Head from "next/head"
-import ErrorPage from "next/error"
-import { useRouter } from "next/router"
+import "@styles/index.css"
 import { DefaultSeo } from "next-seo"
-import { getStrapiMedia } from "utils/media"
+import App from "next/app"
+import ErrorPage from "next/error"
+import Head from "next/head"
 import { getGlobalData } from "utils/api"
-import "@/styles/index.css"
+import { getStrapiMedia } from "utils/media"
 
 const MyApp = ({ Component, pageProps }) => {
   // Extract the data we need
@@ -28,17 +27,17 @@ const MyApp = ({ Component, pageProps }) => {
         title="Page"
         description={metadata.metaDescription}
         openGraph={{
-          images: Object.values(metadata.shareImage.formats).map((image) => {
+          images: Object.values(metadata.shareImage.formats).map((image: any) => {
             return {
               url: getStrapiMedia(image.url),
               width: image.width,
-              height: image.height
+              height: image.height,
             }
-          })
+          }),
         }}
         twitter={{
           cardType: metadata.twitterCardType,
-          handle: metadata.twitterUsername
+          handle: metadata.twitterUsername,
         }}
       />
       {/* Display the content */}
@@ -59,8 +58,8 @@ MyApp.getInitialProps = async (appContext) => {
   return {
     ...appProps,
     pageProps: {
-      global: globalLocale
-    }
+      global: globalLocale,
+    },
   }
 }
 

@@ -12,7 +12,7 @@ const NotificationBanner = ({ data: { text, type }, closeSelf }) => {
           // Apply theme based on notification type
           "bg-blue-600": type === "info",
           "bg-orange-600": type === "warning",
-          "bg-red-600": type === "alert"
+          "bg-red-600": type === "alert",
         }
       )}
     >

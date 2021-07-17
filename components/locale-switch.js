@@ -89,7 +89,7 @@ const LocaleSwitch = ({ pageContext }) => {
 }
 
 LocaleSwitch.propTypes = {
-  initialLocale: PropTypes.string
+  initialLocale: PropTypes.string,
 }
 
 export default LocaleSwitch

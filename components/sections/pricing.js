@@ -13,11 +13,11 @@ const Pricing = ({ data }) => {
               "rounded-md border-2 py-4 px-4 flex-1 md:w-lg",
               // Normal plan
               {
-                "bg-gray-100 text-gray-900 border-gray-300": !plan.isRecommended
+                "bg-gray-100 text-gray-900 border-gray-300": !plan.isRecommended,
               },
               // Recommended plan
               {
-                "bg-primary-100 text-primary-900 border-primary-300": plan.isRecommended
+                "bg-primary-100 text-primary-900 border-primary-300": plan.isRecommended,
               }
             )}
             key={plan.id}
@@ -26,7 +26,7 @@ const Pricing = ({ data }) => {
             <p
               className={classNames("mt-4 text-lg", {
                 "text-primary-700": plan.isRecommended,
-                "text-gray-700": !plan.isRecommended
+                "text-gray-700": !plan.isRecommended,
               })}
             >
               {plan.description}

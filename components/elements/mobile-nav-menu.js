@@ -51,9 +51,9 @@ MobileNavMenu.propTypes = {
   navbar: PropTypes.shape({
     logo: mediaPropTypes,
     links: PropTypes.arrayOf(linkPropTypes),
-    button: buttonLinkPropTypes
+    button: buttonLinkPropTypes,
   }),
-  closeSelf: PropTypes.func
+  closeSelf: PropTypes.func,
 }
 
 export default MobileNavMenu

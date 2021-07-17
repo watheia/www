@@ -8,7 +8,7 @@ const LeadForm = ({ data }) => {
   const [loading, setLoading] = useState(false)
 
   const LeadSchema = yup.object().shape({
-    email: yup.string().email().required()
+    email: yup.string().email().required(),
   })
 
   return (
@@ -27,8 +27,8 @@ const LeadForm = ({ data }) => {
                 method: "POST",
                 body: JSON.stringify({
                   email: values.email,
-                  location: data.location
-                })
+                  location: data.location,
+                }),
               })
             } catch (err) {
               setErrors({ api: err.message })

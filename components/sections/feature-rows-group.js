@@ -13,7 +13,7 @@ const FeatureRowsGroup = ({ data }) => {
             "flex flex-col justify-start md:justify-between md:items-center gap-10",
             {
               "lg:flex-row": index % 2 === 0,
-              "lg:flex-row-reverse": index % 2 === 1
+              "lg:flex-row-reverse": index % 2 === 1,
             }
           )}
           key={feature.id}

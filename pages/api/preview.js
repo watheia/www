@@ -25,7 +25,7 @@ const preview = async (req, res) => {
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
   // Prefix with locale so previews are available in all languages
   res.writeHead(307, {
-    Location: `/${pageData.locale}/${pageData.slug}`
+    Location: `/${pageData.locale}/${pageData.slug}`,
   })
   res.end()
 }

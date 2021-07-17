@@ -42,11 +42,11 @@ Footer.propTypes = {
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         title: PropTypes.string.isRequired,
-        links: PropTypes.arrayOf(linkPropTypes)
+        links: PropTypes.arrayOf(linkPropTypes),
       })
     ),
-    smallText: PropTypes.string.isRequired
-  })
+    smallText: PropTypes.string.isRequired,
+  }),
 }
 
 export default Footer

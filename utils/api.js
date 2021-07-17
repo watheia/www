@@ -6,12 +6,12 @@ export function getStrapiURL(path) {
 export async function fetchAPI(path, options = {}) {
   const defaultOptions = {
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   }
   const mergedOptions = {
     ...defaultOptions,
-    ...options
+    ...options,
   }
   const requestUrl = getStrapiURL(path)
   const response = await fetch(requestUrl, mergedOptions)
