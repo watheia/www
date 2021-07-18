@@ -1,0 +1,488 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model components_elements_features {
+  id   Int     @id @default(autoincrement())
+  name String?
+}
+
+model components_elements_logos {
+  id    Int     @id @default(autoincrement())
+  title String?
+}
+
+model components_elements_notification_banners {
+  id   Int     @id @default(autoincrement())
+  text String?
+  type String?
+}
+
+model components_elements_plans {
+  id                                   Int                                    @id @default(autoincrement())
+  name                                 String?
+  description                          String?
+  isRecommended                        Boolean?
+  price                                Float?
+  pricePeriod                          String?
+  components_elements_plans_components components_elements_plans_components[]
+}
+
+model components_elements_plans_components {
+  id                          Int                       @id @default(autoincrement())
+  field                       String
+  order                       Int
+  component_type              String
+  component_id                Int
+  components_elements_plan_id Int
+  components_elements_plans   components_elements_plans @relation(fields: [components_elements_plan_id], references: [id])
+}
+
+model components_layout_footers {
+  id                                   Int                                    @id @default(autoincrement())
+  smallText                            String?
+  components_layout_footers_components components_layout_footers_components[]
+}
+
+model components_layout_footers_components {
+  id                          Int                       @id @default(autoincrement())
+  field                       String
+  order                       Int
+  component_type              String
+  component_id                Int
+  components_layout_footer_id Int
+  components_layout_footers   components_layout_footers @relation(fields: [components_layout_footer_id], references: [id])
+}
+
+model components_layout_navbars {
+  id                                   Int                                    @id @default(autoincrement())
+  components_layout_navbars_components components_layout_navbars_components[]
+}
+
+model components_layout_navbars_components {
+  id                          Int                       @id @default(autoincrement())
+  field                       String
+  order                       Int
+  component_type              String
+  component_id                Int
+  components_layout_navbar_id Int
+  components_layout_navbars   components_layout_navbars @relation(fields: [components_layout_navbar_id], references: [id])
+}
+
+model components_links_buttons {
+  id     Int      @id @default(autoincrement())
+  url    String?
+  newTab Boolean?
+  text   String?
+  type   String?
+}
+
+model components_links_footer_sections {
+  id                                          Int                                           @id @default(autoincrement())
+  title                                       String?
+  components_links_footer_sections_components components_links_footer_sections_components[]
+}
+
+model components_links_footer_sections_components {
+  id                                 Int                              @id @default(autoincrement())
+  field                              String
+  order                              Int
+  component_type                     String
+  component_id                       Int
+  components_links_footer_section_id Int
+  components_links_footer_sections   components_links_footer_sections @relation(fields: [components_links_footer_section_id], references: [id])
+}
+
+model components_links_links {
+  id     Int      @id @default(autoincrement())
+  url    String?
+  newTab Boolean?
+  text   String?
+}
+
+model components_links_simple_buttons {
+  id   Int     @id @default(autoincrement())
+  text String?
+  type String?
+}
+
+model components_meta_metadata {
+  id              Int     @id @default(autoincrement())
+  metaTitle       String?
+  metaDescription String?
+  twitterCardType String?
+  twitterUsername String?
+}
+
+model components_sections_lead_forms {
+  id                                        Int                                         @id @default(autoincrement())
+  title                                     String?
+  emailPlaceholder                          String?
+  location                                  String?
+  components_sections_lead_forms_components components_sections_lead_forms_components[]
+}
+
+model components_sections_lead_forms_components {
+  id                               Int                            @id @default(autoincrement())
+  field                            String
+  order                            Int
+  component_type                   String
+  component_id                     Int
+  components_sections_lead_form_id Int
+  components_sections_lead_forms   components_sections_lead_forms @relation(fields: [components_sections_lead_form_id], references: [id])
+}
+
+model components_sections_pricings {
+  id                                      Int                                       @id @default(autoincrement())
+  title                                   String?
+  components_sections_pricings_components components_sections_pricings_components[]
+}
+
+model components_sections_pricings_components {
+  id                             Int                          @id @default(autoincrement())
+  field                          String
+  order                          Int
+  component_type                 String
+  component_id                   Int
+  components_sections_pricing_id Int
+  components_sections_pricings   components_sections_pricings @relation(fields: [components_sections_pricing_id], references: [id])
+}
+
+model components_sections_rich_texts {
+  id      Int     @id @default(autoincrement())
+  content String?
+}
+
+model components_slices_bottom_actions {
+  id                                          Int                                           @id @default(autoincrement())
+  title                                       String?
+  components_slices_bottom_actions_components components_slices_bottom_actions_components[]
+}
+
+model components_slices_bottom_actions_components {
+  id                                 Int                              @id @default(autoincrement())
+  field                              String
+  order                              Int
+  component_type                     String
+  component_id                       Int
+  components_slices_bottom_action_id Int
+  components_slices_bottom_actions   components_slices_bottom_actions @relation(fields: [components_slices_bottom_action_id], references: [id])
+}
+
+model components_slices_feature_columns {
+  id          Int     @id @default(autoincrement())
+  title       String?
+  description String?
+}
+
+model components_slices_feature_columns_groups {
+  id                                                  Int                                                   @id @default(autoincrement())
+  components_slices_feature_columns_groups_components components_slices_feature_columns_groups_components[]
+}
+
+model components_slices_feature_columns_groups_components {
+  id                                         Int                                      @id @default(autoincrement())
+  field                                      String
+  order                                      Int
+  component_type                             String
+  component_id                               Int
+  components_slices_feature_columns_group_id Int
+  components_slices_feature_columns_groups   components_slices_feature_columns_groups @relation(fields: [components_slices_feature_columns_group_id], references: [id])
+}
+
+model components_slices_feature_rows {
+  id                                        Int                                         @id @default(autoincrement())
+  title                                     String?
+  description                               String?
+  components_slices_feature_rows_components components_slices_feature_rows_components[]
+}
+
+model components_slices_feature_rows_components {
+  id                               Int                            @id @default(autoincrement())
+  field                            String
+  order                            Int
+  component_type                   String
+  component_id                     Int
+  components_slices_feature_row_id Int
+  components_slices_feature_rows   components_slices_feature_rows @relation(fields: [components_slices_feature_row_id], references: [id])
+}
+
+model components_slices_feature_rows_groups {
+  id                                               Int                                                @id @default(autoincrement())
+  components_slices_feature_rows_groups_components components_slices_feature_rows_groups_components[]
+}
+
+model components_slices_feature_rows_groups_components {
+  id                                      Int                                   @id @default(autoincrement())
+  field                                   String
+  order                                   Int
+  component_type                          String
+  component_id                            Int
+  components_slices_feature_rows_group_id Int
+  components_slices_feature_rows_groups   components_slices_feature_rows_groups @relation(fields: [components_slices_feature_rows_group_id], references: [id])
+}
+
+model components_slices_heroes {
+  id                                  Int                                   @id @default(autoincrement())
+  title                               String?
+  label                               String?
+  description                         String?
+  smallTextWithLink                   String?
+  components_slices_heroes_components components_slices_heroes_components[]
+}
+
+model components_slices_heroes_components {
+  id                        Int                      @id @default(autoincrement())
+  field                     String
+  order                     Int
+  component_type            String
+  component_id              Int
+  components_slices_hero_id Int
+  components_slices_heroes  components_slices_heroes @relation(fields: [components_slices_hero_id], references: [id])
+}
+
+model components_slices_large_videos {
+  id          Int     @id @default(autoincrement())
+  title       String?
+  description String?
+}
+
+model components_slices_testimonials {
+  id          Int     @id @default(autoincrement())
+  text        String?
+  authorName  String?
+  authorTitle String?
+  link        String?
+}
+
+model components_slices_testimonials_groups {
+  id                                               Int                                                @id @default(autoincrement())
+  title                                            String?
+  description                                      String?
+  components_slices_testimonials_groups_components components_slices_testimonials_groups_components[]
+}
+
+model components_slices_testimonials_groups_components {
+  id                                      Int                                   @id @default(autoincrement())
+  field                                   String
+  order                                   Int
+  component_type                          String
+  component_id                            Int
+  components_slices_testimonials_group_id Int
+  components_slices_testimonials_groups   components_slices_testimonials_groups @relation(fields: [components_slices_testimonials_group_id], references: [id])
+}
+
+model core_store {
+  id          Int     @id @default(autoincrement())
+  key         String?
+  value       String?
+  type        String?
+  environment String?
+  tag         String?
+}
+
+model globals {
+  id                 Int                  @id @default(autoincrement())
+  metaTitleSuffix    String
+  locale             String?
+  created_by         Int?
+  updated_by         Int?
+  created_at         DateTime?            @default(now())
+  updated_at         DateTime?            @default(now())
+  globals_components globals_components[]
+}
+
+model globals__localizations {
+  id                Int  @id @default(autoincrement())
+  global_id         Int?
+  related_global_id Int?
+}
+
+model globals_components {
+  id             Int     @id @default(autoincrement())
+  field          String
+  order          Int
+  component_type String
+  component_id   Int
+  global_id      Int
+  globals        globals @relation(fields: [global_id], references: [id])
+}
+
+model i18n_locales {
+  id         Int       @id @default(autoincrement())
+  name       String?
+  code       String?   @unique
+  created_by Int?
+  updated_by Int?
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+}
+
+model lead_form_submissions {
+  id         Int       @id @default(autoincrement())
+  email      String?
+  status     String?
+  location   String?
+  created_by Int?
+  updated_by Int?
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+}
+
+model pages {
+  id               Int                @id @default(autoincrement())
+  shortName        String?
+  status           String
+  slug             String?
+  locale           String?
+  created_by       Int?
+  updated_by       Int?
+  created_at       DateTime?          @default(now())
+  updated_at       DateTime?          @default(now())
+  pages_components pages_components[]
+}
+
+model pages__localizations {
+  id              Int  @id @default(autoincrement())
+  page_id         Int?
+  related_page_id Int?
+}
+
+model pages_components {
+  id             Int    @id @default(autoincrement())
+  field          String
+  order          Int
+  component_type String
+  component_id   Int
+  page_id        Int
+  pages          pages  @relation(fields: [page_id], references: [id])
+}
+
+model strapi_administrator {
+  id                 Int      @id @default(autoincrement())
+  firstname          String?
+  lastname           String?
+  username           String?
+  email              String   @unique
+  password           String?
+  resetPasswordToken String?
+  registrationToken  String?
+  isActive           Boolean?
+  blocked            Boolean?
+  preferedLanguage   String?
+}
+
+model strapi_permission {
+  id         Int       @id @default(autoincrement())
+  action     String
+  subject    String?
+  properties String?
+  conditions String?
+  role       Int?
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+}
+
+model strapi_role {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  code        String    @unique
+  description String?
+  created_at  DateTime? @default(now())
+  updated_at  DateTime? @default(now())
+}
+
+model strapi_users_roles {
+  id      Int  @id @default(autoincrement())
+  user_id Int?
+  role_id Int?
+}
+
+model strapi_webhooks {
+  id      Int      @id @default(autoincrement())
+  name    String?
+  url     String?
+  headers String?
+  events  String?
+  enabled Boolean?
+}
+
+model upload_file {
+  id                Int       @id @default(autoincrement())
+  name              String
+  alternativeText   String?
+  caption           String?
+  width             Int?
+  height            Int?
+  formats           String?
+  hash              String
+  ext               String?
+  mime              String
+  size              Float
+  url               String
+  previewUrl        String?
+  provider          String
+  provider_metadata String?
+  created_by        Int?
+  updated_by        Int?
+  created_at        DateTime? @default(now())
+  updated_at        DateTime? @default(now())
+}
+
+model upload_file_morph {
+  id             Int     @id @default(autoincrement())
+  upload_file_id Int?
+  related_id     Int?
+  related_type   String?
+  field          String?
+  order          Int?
+}
+
+model users_permissions_permission {
+  id         Int     @id @default(autoincrement())
+  type       String
+  controller String
+  action     String
+  enabled    Boolean
+  policy     String?
+  role       Int?
+  created_by Int?
+  updated_by Int?
+
+  @@map("users-permissions_permission")
+}
+
+model users_permissions_role {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  type        String? @unique
+  created_by  Int?
+  updated_by  Int?
+
+  @@map("users-permissions_role")
+}
+
+model users_permissions_user {
+  id                 Int       @id @default(autoincrement())
+  username           String    @unique
+  email              String
+  provider           String?
+  password           String?
+  resetPasswordToken String?
+  confirmationToken  String?
+  confirmed          Boolean?
+  blocked            Boolean?
+  role               Int?
+  created_by         Int?
+  updated_by         Int?
+  created_at         DateTime? @default(now())
+  updated_at         DateTime? @default(now())
+
+  @@map("users-permissions_user")
+}

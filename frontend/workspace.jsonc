@@ -1,0 +1,130 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    /**
+     * the name of the component workspace. used for development purposes.
+     **/
+    "name": "theme",
+    /**
+     * set the icon to be shown on the Bit server.
+     **/
+    "icon": "https://cdn.watheia.org/assets/micro.png",
+    /**
+     * default directory for all components in workspace, the following placeholders are available:
+     * name - component name includes namespace, e.g. 'ui/button'.
+     * scopeId - full scope-id includes the owner, e.g. 'teambit.compilation'.
+     * scope - scope name only, e.g. 'compilation'.
+     * owner - owner name in bit.dev, e.g. 'teambit'.
+     **/
+    "defaultDirectory": "components/{name}",
+    /**
+     * default scope for all components in workspace.
+     **/
+    "defaultScope": "watheia.designx"
+  },
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/yarn",
+    "policy": {
+      "dependencies": {
+        "@emotion/react": "11.4.0",
+        "@emotion/server": "11.4.0",
+        "@emotion/styled": "11.3.0",
+        "@material-ui/core": "5.0.0-beta.1",
+        "@material-ui/icons": "5.0.0-beta.1",
+        "@material-ui/styles": "5.0.0-beta.1",
+        "@material-ui/system": "5.0.0-beta.1",
+        "@testing-library/dom": "8.1.0",
+        "@testing-library/react": "12.0.0",
+        "@types/jest": "26.0.24",
+        "autoprefixer": "10.3.1",
+        "eslint": "7.30.0",
+        "eslint-config-prettier": "8.3.0",
+        "eslint-plugin-prettier": "3.4.0",
+        "jest": "27.0.6",
+        "postcss": "8.3.5",
+        "prettier": "2.3.2",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "tailwindcss": "2.2.4"
+      },
+      "peerDependencies": {}
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true,
+    "installFromBitDevRegistry": true,
+    "savePrefix": ""
+  },
+  /**
+   * workspace variants allow to set different subsets of configuration for components in your
+   * workspace. this is extremely useful for upgrading, aligning and building components with a new
+   * set of dependencies. a rule can be a directory or a component-id/namespace, in which case,
+   * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
+   * see https://harmony-docs.bit.dev/aspects/variants for more info.
+   **/
+  "teambit.workspace/variants": {
+    /**
+     * "*" is a special rule which applied on all components in the workspace.
+     **/
+    "*": {
+      "teambit.dependencies/dependency-resolver": {},
+      "teambit.pkg/pkg": {
+        "packageManagerPublishArgs": [
+          "--access public"
+        ],
+        "packageJson": {
+          "name": "@watheia/designx.{name}",
+          "license": "Apache-2.0",
+          "private": false,
+          "author": "Aaron R Miller <amiller@watheia.org>",
+          "bugs": {
+            "email": "admin@watheia.org",
+            "url": "https://github.com/watheia/designx/issues"
+          },
+          "categories": [
+            "Programming Languages",
+            "Extension Packs",
+            "Linters",
+            "Themes",
+            "Visualization"
+          ],
+          "galleryBanner": {
+            "color": "#215C94"
+          },
+          "homepage": "https://watheia.app/home",
+          "repository": {
+            "type": "git",
+            "url": "https://github.com/watheia/designx"
+          },
+          "keywords": [
+            "watheia",
+            "micro",
+            "micro component",
+            "micro frontend",
+            "design system",
+            "stencil",
+            "spectrum",
+            "material-ui"
+          ]
+        }
+      },
+      "teambit.react/react": {
+        "mdx": true
+      }
+    }
+  }
+}

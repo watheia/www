@@ -1,0 +1,180 @@
+strict digraph "dependency-cruiser output"{
+    ordering="out" rankdir="LR" splines="ortho" overlap="false" nodesep="0.16" ranksep="0.18" fontname="Helvetica-bold" fontsize="9" style="rounded,bold,filled" fillcolor="#ffffff" compound="true"
+    node [shape="box" style="rounded, filled" height="0.2" color="black" fillcolor="#ffffcc" fontcolor="black" fontname="Helvetica" fontsize="9"]
+    edge [arrowhead="normal" arrowsize="0.6" penwidth="2.0" color="#00000033" fontname="Helvetica" fontsize="9"]
+
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/@emotion" [label="@emotion" URL="vscode://file/${process.cwd()}/node_modules/@emotion" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/@material-ui" [label="@material-ui" URL="vscode://file/${process.cwd()}/node_modules/@material-ui" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/classnames" [label="classnames" URL="vscode://file/${process.cwd()}/node_modules/classnames" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/clsx" [label="clsx" URL="vscode://file/${process.cwd()}/node_modules/clsx" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/cookie" [label="cookie" URL="vscode://file/${process.cwd()}/node_modules/cookie" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/formik" [label="formik" URL="vscode://file/${process.cwd()}/node_modules/formik" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/js-cookie" [label="js-cookie" URL="vscode://file/${process.cwd()}/node_modules/js-cookie" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/next" [label="next" URL="vscode://file/${process.cwd()}/node_modules/next" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/next-seo" [label="next-seo" URL="vscode://file/${process.cwd()}/node_modules/next-seo" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/prop-types" [label="prop-types" URL="vscode://file/${process.cwd()}/node_modules/prop-types" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/react" [label="react" URL="vscode://file/${process.cwd()}/node_modules/react" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/react-icons" [label="react-icons" URL="vscode://file/${process.cwd()}/node_modules/react-icons" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/react-markdown" [label="react-markdown" URL="vscode://file/${process.cwd()}/node_modules/react-markdown" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_node_modules" {label="node_modules" "node_modules/yup" [label="yup" URL="vscode://file/${process.cwd()}/node_modules/yup" shape="box3d" fillcolor="#c40b0a1a" fontcolor="#c40b0a"] }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/Copyright.tsx" [label="Copyright.tsx" URL="vscode://file/${process.cwd()}/src/components/Copyright.tsx" fillcolor="#bbfeff"] } }
+    "src/components/Copyright.tsx" -> "node_modules/@material-ui" [penwidth="1.0"]
+    "src/components/Copyright.tsx" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/Link.tsx" [label="Link.tsx" URL="vscode://file/${process.cwd()}/src/components/Link.tsx" fillcolor="#bbfeff"] } }
+    "src/components/Link.tsx" -> "node_modules/@material-ui" [penwidth="1.0"]
+    "src/components/Link.tsx" -> "node_modules/clsx" [penwidth="1.0"]
+    "src/components/Link.tsx" -> "node_modules/next" [penwidth="1.0"]
+    "src/components/Link.tsx" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/ProTip.tsx" [label="ProTip.tsx" URL="vscode://file/${process.cwd()}/src/components/ProTip.tsx" fillcolor="#bbfeff"] } }
+    "src/components/ProTip.tsx" -> "node_modules/@material-ui" [penwidth="1.0"]
+    "src/components/ProTip.tsx" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/button-link.tsx" [label="button-link.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/button-link.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/button-link.tsx" -> "src/components/elements/custom-link.tsx"
+    "src/components/elements/button-link.tsx" -> "node_modules/classnames" [penwidth="1.0"]
+    "src/components/elements/button-link.tsx" -> "node_modules/prop-types" [penwidth="1.0"]
+    "src/components/elements/button-link.tsx" -> "src/utils/types.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/button.js" [label="button.js" URL="vscode://file/${process.cwd()}/src/components/elements/button.js" ] } } }
+    "src/components/elements/button.js" -> "src/components/elements/loader.tsx"
+    "src/components/elements/button.js" -> "node_modules/classnames" [penwidth="1.0"]
+    "src/components/elements/button.js" -> "node_modules/prop-types" [penwidth="1.0"]
+    "src/components/elements/button.js" -> "src/utils/types.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/custom-link.tsx" [label="custom-link.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/custom-link.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/custom-link.tsx" -> "node_modules/next" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/footer.tsx" [label="footer.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/footer.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/footer.tsx" -> "src/components/elements/custom-link.tsx"
+    "src/components/elements/footer.tsx" -> "src/components/elements/image.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/image.tsx" [label="image.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/image.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/image.tsx" -> "node_modules/next" [penwidth="1.0"]
+    "src/components/elements/image.tsx" -> "src/utils/media.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/loader.tsx" [label="loader.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/loader.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/loader.tsx" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/mobile-nav-menu.tsx" [label="mobile-nav-menu.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/mobile-nav-menu.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/mobile-nav-menu.tsx" -> "src/components/elements/button-link.tsx"
+    "src/components/elements/mobile-nav-menu.tsx" -> "src/components/elements/custom-link.tsx"
+    "src/components/elements/mobile-nav-menu.tsx" -> "src/components/elements/image.tsx"
+    "src/components/elements/mobile-nav-menu.tsx" -> "node_modules/react-icons" [penwidth="1.0"]
+    "src/components/elements/mobile-nav-menu.tsx" -> "src/utils/button.js"
+    "src/components/elements/mobile-nav-menu.tsx" -> "src/utils/hooks.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/navbar.tsx" [label="navbar.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/navbar.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/navbar.tsx" -> "src/components/locale-switch.js"
+    "src/components/elements/navbar.tsx" -> "src/components/elements/button-link.tsx"
+    "src/components/elements/navbar.tsx" -> "src/components/elements/custom-link.tsx"
+    "src/components/elements/navbar.tsx" -> "src/components/elements/image.tsx"
+    "src/components/elements/navbar.tsx" -> "src/components/elements/mobile-nav-menu.tsx"
+    "src/components/elements/navbar.tsx" -> "node_modules/next" [penwidth="1.0"]
+    "src/components/elements/navbar.tsx" -> "node_modules/react" [penwidth="1.0"]
+    "src/components/elements/navbar.tsx" -> "node_modules/react-icons" [penwidth="1.0"]
+    "src/components/elements/navbar.tsx" -> "src/utils/button.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/notification-banner.tsx" [label="notification-banner.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/notification-banner.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/notification-banner.tsx" -> "node_modules/classnames" [penwidth="1.0"]
+    "src/components/elements/notification-banner.tsx" -> "node_modules/react-icons" [penwidth="1.0"]
+    "src/components/elements/notification-banner.tsx" -> "node_modules/react-markdown" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/seo.tsx" [label="seo.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/seo.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/seo.tsx" -> "node_modules/next-seo" [penwidth="1.0"]
+    "src/components/elements/seo.tsx" -> "src/utils/media.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/elements" {label="elements" "src/components/elements/video.tsx" [label="video.tsx" URL="vscode://file/${process.cwd()}/src/components/elements/video.tsx" fillcolor="#bbfeff"] } } }
+    "src/components/elements/video.tsx" -> "src/utils/media.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/icons" {label="icons" "src/components/icons/world.js" [label="world.js" URL="vscode://file/${process.cwd()}/src/components/icons/world.js" ] } } }
+    "src/components/icons/world.js" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/layout.tsx" [label="layout.tsx" URL="vscode://file/${process.cwd()}/src/components/layout.tsx" fillcolor="#bbfeff"] } }
+    "src/components/layout.tsx" -> "src/components/elements/footer.tsx"
+    "src/components/layout.tsx" -> "src/components/elements/navbar.tsx"
+    "src/components/layout.tsx" -> "src/components/elements/notification-banner.tsx"
+    "src/components/layout.tsx" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/locale-switch.js" [label="locale-switch.js" URL="vscode://file/${process.cwd()}/src/components/locale-switch.js" ] } }
+    "src/components/locale-switch.js" -> "src/components/icons/world.js"
+    "src/components/locale-switch.js" -> "src/utils/hooks.js"
+    "src/components/locale-switch.js" -> "src/utils/localize.ts"
+    "src/components/locale-switch.js" -> "node_modules/js-cookie" [penwidth="1.0"]
+    "src/components/locale-switch.js" -> "node_modules/next" [penwidth="1.0"]
+    "src/components/locale-switch.js" -> "node_modules/prop-types" [penwidth="1.0"]
+    "src/components/locale-switch.js" -> "node_modules/react" [penwidth="1.0"]
+    "src/components/locale-switch.js" -> "node_modules/react-icons" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/sections.tsx" [label="sections.tsx" URL="vscode://file/${process.cwd()}/src/components/sections.tsx" fillcolor="#bbfeff"] } }
+    "src/components/sections.tsx" -> "src/components/sections/lead-form.js"
+    "src/components/sections.tsx" -> "src/components/sections/pricing.js"
+    "src/components/sections.tsx" -> "src/components/sections/rich-text.js"
+    "src/components/sections.tsx" -> "src/components/sections/bottom-actions.js"
+    "src/components/sections.tsx" -> "src/components/sections/feature-columns-group.js"
+    "src/components/sections.tsx" -> "src/components/sections/feature-rows-group.js"
+    "src/components/sections.tsx" -> "src/components/sections/hero.js"
+    "src/components/sections.tsx" -> "src/components/sections/large-video.js"
+    "src/components/sections.tsx" -> "src/components/sections/testimonials-group.js"
+    "src/components/sections.tsx" -> "node_modules/next" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/bottom-actions.js" [label="bottom-actions.js" URL="vscode://file/${process.cwd()}/src/components/sections/bottom-actions.js" ] } } }
+    "src/components/sections/bottom-actions.js" -> "src/components/elements/button-link.tsx"
+    "src/components/sections/bottom-actions.js" -> "src/utils/button.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/feature-columns-group.js" [label="feature-columns-group.js" URL="vscode://file/${process.cwd()}/src/components/sections/feature-columns-group.js" ] } } }
+    "src/components/sections/feature-columns-group.js" -> "src/components/elements/image.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/feature-rows-group.js" [label="feature-rows-group.js" URL="vscode://file/${process.cwd()}/src/components/sections/feature-rows-group.js" ] } } }
+    "src/components/sections/feature-rows-group.js" -> "src/components/elements/custom-link.tsx"
+    "src/components/sections/feature-rows-group.js" -> "src/components/elements/image.tsx"
+    "src/components/sections/feature-rows-group.js" -> "src/components/elements/video.tsx"
+    "src/components/sections/feature-rows-group.js" -> "node_modules/classnames" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/hero.js" [label="hero.js" URL="vscode://file/${process.cwd()}/src/components/sections/hero.js" ] } } }
+    "src/components/sections/hero.js" -> "src/components/elements/button-link.tsx"
+    "src/components/sections/hero.js" -> "src/components/elements/image.tsx"
+    "src/components/sections/hero.js" -> "node_modules/react-markdown" [penwidth="1.0"]
+    "src/components/sections/hero.js" -> "src/utils/button.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/large-video.js" [label="large-video.js" URL="vscode://file/${process.cwd()}/src/components/sections/large-video.js" ] } } }
+    "src/components/sections/large-video.js" -> "src/components/elements/video.tsx"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/lead-form.js" [label="lead-form.js" URL="vscode://file/${process.cwd()}/src/components/sections/lead-form.js" ] } } }
+    "src/components/sections/lead-form.js" -> "src/components/elements/button.js"
+    "src/components/sections/lead-form.js" -> "node_modules/formik" [penwidth="1.0"]
+    "src/components/sections/lead-form.js" -> "node_modules/react" [penwidth="1.0"]
+    "src/components/sections/lead-form.js" -> "src/utils/api.js"
+    "src/components/sections/lead-form.js" -> "node_modules/yup" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/pricing.js" [label="pricing.js" URL="vscode://file/${process.cwd()}/src/components/sections/pricing.js" ] } } }
+    "src/components/sections/pricing.js" -> "node_modules/classnames" [penwidth="1.0"]
+    "src/components/sections/pricing.js" -> "node_modules/react-icons" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/rich-text.js" [label="rich-text.js" URL="vscode://file/${process.cwd()}/src/components/sections/rich-text.js" ] } } }
+    "src/components/sections/rich-text.js" -> "node_modules/prop-types" [penwidth="1.0"]
+    "src/components/sections/rich-text.js" -> "node_modules/react-markdown" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" subgraph "cluster_src/components/sections" {label="sections" "src/components/sections/testimonials-group.js" [label="testimonials-group.js" URL="vscode://file/${process.cwd()}/src/components/sections/testimonials-group.js" ] } } }
+    "src/components/sections/testimonials-group.js" -> "src/components/elements/custom-link.tsx"
+    "src/components/sections/testimonials-group.js" -> "src/components/elements/image.tsx"
+    "src/components/sections/testimonials-group.js" -> "node_modules/classnames" [penwidth="1.0"]
+    "src/components/sections/testimonials-group.js" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/components" {label="components" "src/components/theme.ts" [label="theme.ts" URL="vscode://file/${process.cwd()}/src/components/theme.ts" fillcolor="#ddfeff"] } }
+    "src/components/theme.ts" -> "node_modules/@material-ui" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/pages" {label="pages" "src/pages/[[...slug]].tsx" [label="[[...slug]].tsx" URL="vscode://file/${process.cwd()}/src/pages/[[...slug]].tsx" fillcolor="#bbfeff"] } }
+    "src/pages/[[...slug]].tsx" -> "src/components/elements/seo.tsx"
+    "src/pages/[[...slug]].tsx" -> "src/components/layout.tsx"
+    "src/pages/[[...slug]].tsx" -> "src/components/sections.tsx"
+    "src/pages/[[...slug]].tsx" -> "node_modules/next" [penwidth="1.0"]
+    "src/pages/[[...slug]].tsx" -> "src/utils/api.js"
+    "src/pages/[[...slug]].tsx" -> "src/utils/localize.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/pages" {label="pages" "src/pages/_app.tsx" [label="_app.tsx" URL="vscode://file/${process.cwd()}/src/pages/_app.tsx" fillcolor="#bbfeff"] } }
+    "src/pages/_app.tsx" -> "src/components/theme.ts"
+    "src/pages/_app.tsx" -> "node_modules/@emotion" [penwidth="1.0"]
+    "src/pages/_app.tsx" -> "node_modules/@material-ui" [penwidth="1.0"]
+    "src/pages/_app.tsx" -> "src/styles/index.css"
+    "src/pages/_app.tsx" -> "src/utils/api.js"
+    "src/pages/_app.tsx" -> "node_modules/next-seo" [penwidth="1.0"]
+    "src/pages/_app.tsx" -> "node_modules/next" [penwidth="1.0"]
+    "src/pages/_app.tsx" -> "node_modules/react" [penwidth="1.0"]
+    "src/pages/_app.tsx" -> "src/utils/media.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/pages" {label="pages" "src/pages/_document.tsx" [label="_document.tsx" URL="vscode://file/${process.cwd()}/src/pages/_document.tsx" fillcolor="#bbfeff"] } }
+    "src/pages/_document.tsx" -> "src/components/theme.ts"
+    "src/pages/_document.tsx" -> "node_modules/@emotion" [penwidth="1.0"]
+    "src/pages/_document.tsx" -> "node_modules/next" [penwidth="1.0"]
+    "src/pages/_document.tsx" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/pages" {label="pages" subgraph "cluster_src/pages/api" {label="api" "src/pages/api/exit-preview.js" [label="exit-preview.js" URL="vscode://file/${process.cwd()}/src/pages/api/exit-preview.js" ] } } }
+    "src/pages/api/exit-preview.js" -> "node_modules/next" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/pages" {label="pages" subgraph "cluster_src/pages/api" {label="api" "src/pages/api/preview.js" [label="preview.js" URL="vscode://file/${process.cwd()}/src/pages/api/preview.js" ] } } }
+    "src/pages/api/preview.js" -> "src/utils/api.js"
+    "src/pages/api/preview.js" -> "src/utils/parse-cookies.js"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/styles" {label="styles" "src/styles/index.css" [label="index.css" URL="vscode://file/${process.cwd()}/src/styles/index.css" ] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/api.js" [label="api.js" URL="vscode://file/${process.cwd()}/src/utils/api.js" ] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/button.js" [label="button.js" URL="vscode://file/${process.cwd()}/src/utils/button.js" ] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/hooks.js" [label="hooks.js" URL="vscode://file/${process.cwd()}/src/utils/hooks.js" ] } }
+    "src/utils/hooks.js" -> "node_modules/react" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/localize.ts" [label="localize.ts" URL="vscode://file/${process.cwd()}/src/utils/localize.ts" fillcolor="#ddfeff"] } }
+    "src/utils/localize.ts" -> "src/utils/api.js"
+    "src/utils/localize.ts" -> "src/utils/types.ts"
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/media.js" [label="media.js" URL="vscode://file/${process.cwd()}/src/utils/media.js" ] } }
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/parse-cookies.js" [label="parse-cookies.js" URL="vscode://file/${process.cwd()}/src/utils/parse-cookies.js" ] } }
+    "src/utils/parse-cookies.js" -> "node_modules/cookie" [penwidth="1.0"]
+    subgraph "cluster_src" {label="src" subgraph "cluster_src/utils" {label="utils" "src/utils/types.ts" [label="types.ts" URL="vscode://file/${process.cwd()}/src/utils/types.ts" fillcolor="#ddfeff"] } }
+    "src/utils/types.ts" -> "node_modules/prop-types" [penwidth="1.0"]
+}

@@ -1,0 +1,39 @@
+strict digraph "dependency-cruiser output"{
+    ordering="out" rankdir="LR" splines="ortho" overlap="false" nodesep="0.16" ranksep="0.18" fontname="Helvetica-bold" fontsize="9" style="rounded,bold,filled" fillcolor="#ffffff" compound="true"
+    node [shape="box" style="rounded, filled" height="0.2" color="black" fillcolor="#ffffcc" fontcolor="black" fontname="Helvetica" fontsize="9"]
+    edge [arrowhead="normal" arrowsize="0.6" penwidth="2.0" color="#00000033" fontname="Helvetica" fontsize="9"]
+
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/global" {label="global" subgraph "cluster_api/global/controllers" {label="controllers" "api/global/controllers/global.js" [label="global.js" URL="api/global/controllers/global.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/global" {label="global" subgraph "cluster_api/global/models" {label="models" "api/global/models/global.js" [label="global.js" URL="api/global/models/global.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/global" {label="global" subgraph "cluster_api/global/services" {label="services" "api/global/services/global.js" [label="global.js" URL="api/global/services/global.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/lead-form-submissions" {label="lead-form-submissions" subgraph "cluster_api/lead-form-submissions/controllers" {label="controllers" "api/lead-form-submissions/controllers/lead-form-submissions.js" [label="lead-form-submissions.js" URL="api/lead-form-submissions/controllers/lead-form-submissions.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/lead-form-submissions" {label="lead-form-submissions" subgraph "cluster_api/lead-form-submissions/models" {label="models" "api/lead-form-submissions/models/lead-form-submissions.js" [label="lead-form-submissions.js" URL="api/lead-form-submissions/models/lead-form-submissions.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/lead-form-submissions" {label="lead-form-submissions" subgraph "cluster_api/lead-form-submissions/services" {label="services" "api/lead-form-submissions/services/lead-form-submissions.js" [label="lead-form-submissions.js" URL="api/lead-form-submissions/services/lead-form-submissions.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/page" {label="page" subgraph "cluster_api/page/controllers" {label="controllers" "api/page/controllers/page.js" [label="page.js" URL="api/page/controllers/page.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/page" {label="page" subgraph "cluster_api/page/models" {label="models" "api/page/models/page.js" [label="page.js" URL="api/page/models/page.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_api" {label="api" subgraph "cluster_api/page" {label="page" subgraph "cluster_api/page/services" {label="services" "api/page/services/page.js" [label="page.js" URL="api/page/services/page.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_config" {label="config" "config/database.js" [label="database.js" URL="config/database.js" fillcolor="#ccffcc"] }
+    subgraph "cluster_config" {label="config" subgraph "cluster_config/functions" {label="functions" "config/functions/bootstrap.js" [label="bootstrap.js" URL="config/functions/bootstrap.js" ] } }
+    "config/functions/bootstrap.js" -> "data/data.js"
+    "config/functions/bootstrap.js" -> "fs" [style="dashed" penwidth="1.0"]
+    subgraph "cluster_config" {label="config" subgraph "cluster_config/functions" {label="functions" "config/functions/cron.js" [label="cron.js" URL="config/functions/cron.js" fillcolor="#ccffcc"] } }
+    subgraph "cluster_config" {label="config" subgraph "cluster_config/functions" {label="functions" subgraph "cluster_config/functions/responses" {label="responses" "config/functions/responses/404.js" [label="404.js" URL="config/functions/responses/404.js" fillcolor="#ccffcc"] } } }
+    subgraph "cluster_config" {label="config" "config/server.js" [label="server.js" URL="config/server.js" fillcolor="#ccffcc"] }
+    subgraph "cluster_data" {label="data" "data/data.js" [label="data.js" URL="data/data.js" ] }
+    "data/data.js" -> "data/en/index.js"
+    "data/data.js" -> "data/fr/index.js"
+    "data/data.js" -> "data/lead-form-submissions.json"
+    subgraph "cluster_data" {label="data" subgraph "cluster_data/en" {label="en" "data/en/global.json" [label="global.json" URL="data/en/global.json" fillcolor="#ffee44"] } }
+    subgraph "cluster_data" {label="data" subgraph "cluster_data/en" {label="en" "data/en/index.js" [label="index.js" URL="data/en/index.js" ] } }
+    "data/en/index.js" -> "data/en/global.json"
+    "data/en/index.js" -> "data/en/pages.json"
+    subgraph "cluster_data" {label="data" subgraph "cluster_data/en" {label="en" "data/en/pages.json" [label="pages.json" URL="data/en/pages.json" fillcolor="#ffee44"] } }
+    subgraph "cluster_data" {label="data" subgraph "cluster_data/fr" {label="fr" "data/fr/global.json" [label="global.json" URL="data/fr/global.json" fillcolor="#ffee44"] } }
+    subgraph "cluster_data" {label="data" subgraph "cluster_data/fr" {label="fr" "data/fr/index.js" [label="index.js" URL="data/fr/index.js" ] } }
+    "data/fr/index.js" -> "data/fr/global.json"
+    "data/fr/index.js" -> "data/fr/pages.json"
+    subgraph "cluster_data" {label="data" subgraph "cluster_data/fr" {label="fr" "data/fr/pages.json" [label="pages.json" URL="data/fr/pages.json" fillcolor="#ffee44"] } }
+    subgraph "cluster_data" {label="data" "data/lead-form-submissions.json" [label="lead-form-submissions.json" URL="data/lead-form-submissions.json" fillcolor="#ffee44"] }
+    subgraph "cluster_extensions" {label="extensions" subgraph "cluster_extensions/users-permissions" {label="users-permissions" subgraph "cluster_extensions/users-permissions/config" {label="config" "extensions/users-permissions/config/jwt.js" [label="jwt.js" URL="extensions/users-permissions/config/jwt.js" fillcolor="#ccffcc"] } } }
+    "fs" [label="fs" color="grey" fontcolor="grey"]
+}
