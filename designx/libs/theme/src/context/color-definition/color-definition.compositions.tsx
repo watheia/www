@@ -1,0 +1,142 @@
+import React from "react"
+import { primaryPalette } from "./index"
+
+const colors = [
+  "--wa-color-text",
+  "--wa-color-text-heavy",
+  "--wa-color-text-light",
+  "--wa-color-text-inactive",
+  "--wa-color-border",
+  "--wa-color-border-heavy",
+  "--wa-color-border-light",
+  "--wa-color-border-lightest",
+  "--wa-color-accent-color",
+  "--wa-color-accent-heavy",
+  "--wa-color-accent-light",
+  "--wa-color-accent-text",
+  "--wa-color-accent-text-heavy",
+  "--wa-color-text-on-accent",
+  "--wa-color-accent-bg",
+  "--wa-color-accent-bg-heavy",
+  "--wa-color-bg-color",
+  "--wa-color-bg-heavy",
+  "--wa-color-bg-heaviest",
+  "--wa-color-bg-heaviest",
+  "--wa-color-bg-bedrock",
+  "--wa-color-bg-navigation",
+  "--wa-color-bg-overlay",
+  "--wa-color-bg-modal",
+  "--wa-color-bg-tooltip",
+  "--wa-color-bg-tooltip-heavy",
+  "--wa-color-bg-dent",
+  "--wa-color-error-color",
+  "--wa-color-error-heavy",
+  "--wa-color-error-light",
+  "--wa-color-error-bg",
+  "--wa-color-error-bg-heavy",
+  "--wa-color-black: ",
+  "--wa-color-white",
+  "--wa-color-blue",
+  "--wa-color-gray-50",
+  "--wa-color-gray-75",
+  "--wa-color-gray-100",
+  "--wa-color-gray-200",
+  "--wa-color-gray-300",
+  "--wa-color-gray-400",
+  "--wa-color-gray-500",
+  "--wa-color-gray-600",
+  "--wa-color-gray-700",
+  "--wa-color-gray-800",
+  "--wa-color-gray-900",
+  "--wa-color-blue-200",
+  "--wa-color-blue-300",
+  "--wa-color-blue-400",
+  "--wa-color-blue-500",
+  "--wa-color-blue-600",
+  "--wa-color-blue-700",
+  "--wa-color-blue-800",
+  "--wa-color-red-400",
+  "--wa-color-red-500",
+  "--wa-color-red-600",
+  "--wa-color-red-700",
+  "--wa-color-orange-400",
+  "--wa-color-orange-500",
+  "--wa-color-orange-600",
+  "--wa-color-orange-700",
+  "--wa-color-green-400",
+  "--wa-color-green-500",
+  "--wa-color-green-600",
+  "--wa-color-green-700",
+  "--wa-color-celery-200",
+  "--wa-color-celery-300",
+  "--wa-color-celery-400",
+  "--wa-color-celery-500",
+  "--wa-color-celery-600",
+  "--wa-color-celery-700",
+  "--wa-color-chartreuse-300",
+  "--wa-color-chartreuse-400",
+  "--wa-color-chartreuse-500",
+  "--wa-color-chartreuse-600",
+  "--wa-color-chartreuse-700",
+  "--wa-color-yellow-200",
+  "--wa-color-yellow-300",
+  "--wa-color-yellow-400",
+  "--wa-color-yellow-500",
+  "--wa-color-yellow-600",
+  "--wa-color-yellow-700",
+  "--wa-color-magenta-200",
+  "--wa-color-magenta-300",
+  "--wa-color-magenta-400",
+  "--wa-color-magenta-500",
+  "--wa-color-magenta-600",
+  "--wa-color-magenta-700",
+  "--wa-color-fuchsia-400",
+  "--wa-color-fuchsia-500",
+  "--wa-color-fuchsia-600",
+  "--wa-color-fuchsia-700",
+  "--wa-color-purple-400",
+  "--wa-color-purple-500",
+  "--wa-color-purple-600",
+  "--wa-color-purple-700",
+  "--wa-color-purple-800",
+  "--wa-color-indigo-200",
+  "--wa-color-indigo-300",
+  "--wa-color-indigo-400",
+  "--wa-color-indigo-500",
+  "--wa-color-indigo-600",
+  "--wa-color-indigo-700",
+  "--wa-color-seafoam-200",
+  "--wa-color-seafoam-300",
+  "--wa-color-seafoam-400",
+  "--wa-color-seafoam-500",
+  "--wa-color-seafoam-600",
+  "--wa-color-seafoam-700",
+]
+
+export function Preview() {
+  return (
+    <div className={primaryPalette}>
+      {colors.map((x) => (
+        <ColorBox colorName={x} />
+      ))}
+    </div>
+  )
+}
+
+function ColorBox({ colorName }: { colorName: string }) {
+  return (
+    <div style={{ display: "flex", borderRadius: 4, marginBottom: 4 }}>
+      <div
+        style={{
+          background: `var(${colorName})`,
+          width: 20,
+          height: 20,
+          borderRadius: 4,
+          marginRight: 8,
+          border: "1px solid black",
+        }}
+      ></div>
+      <div>{colorName}</div>
+    </div>
+  )
+}

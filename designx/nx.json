@@ -1,0 +1,53 @@
+{
+  "npmScope": "designx",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "NzIwNzE3MzItMDhiYy00YjZhLTk3MTgtY2RmNzYzNjFiYzBlfHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "designx": {
+      "tags": []
+    },
+    "layout": {
+      "tags": []
+    },
+    "model": {
+      "tags": []
+    },
+    "portal": {
+      "tags": []
+    },
+    "portal-e2e": {
+      "tags": [],
+      "implicitDependencies": ["portal"]
+    },
+    "theme": {
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,22 @@
+---
+description: ThemeProvider context.
+labels: ["context"]
+---
+
+import { ThemeProvider } from "./theme-provider"
+import { MockComponent } from "./theme.composition"
+
+## React Theme Context
+
+This is a simple [React Context](https://reactjs.org/docs/context.html) shared as a Bit
+component. Use this component to apply a theme as a context to set on it's children.
+
+### Component usage
+
+```tsx
+() => {
+<ThemeProvider colorScheme="dark">
+  // My lovely children now get a theme!
+  <MockComponent />
+</ThemeProvider>;
+```

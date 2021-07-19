@@ -1,0 +1,125 @@
+/**
+ * CSS colors and variables for the app.
+ */
+.primaryPalette {
+  --wa-color-black: rgb(0, 0, 0);
+  --wa-color-white: rgb(255, 255, 255);
+  --wa-color-blue: rgb(20, 115, 230);
+  --wa-color-gray-50: rgb(255, 255, 255);
+  --wa-color-gray-75: rgb(255, 255, 255);
+  --wa-color-gray-100: rgb(255, 255, 255);
+  --wa-color-gray-200: rgb(244, 244, 244);
+  --wa-color-gray-300: rgb(234, 234, 234);
+  --wa-color-gray-400: rgb(211, 211, 211);
+  --wa-color-gray-500: rgb(188, 188, 188);
+  --wa-color-gray-600: rgb(149, 149, 149);
+  --wa-color-gray-700: rgb(116, 116, 116);
+  --wa-color-gray-800: rgb(80, 80, 80);
+  --wa-color-gray-900: rgb(50, 50, 50);
+  --wa-color-blue-200: rgb(90, 169, 250);
+  --wa-color-blue-300: rgb(75, 156, 245);
+  --wa-color-blue-400: rgb(55, 142, 240);
+  --wa-color-blue-500: rgb(38, 128, 235);
+  --wa-color-blue-600: rgb(20, 115, 230);
+  --wa-color-blue-700: rgb(13, 102, 208);
+  --wa-color-blue-800: rgb(9, 90, 186);
+  --wa-color-red-400: rgb(236, 91, 98);
+  --wa-color-red-500: rgb(227, 72, 80);
+  --wa-color-red-600: rgb(215, 55, 63);
+  --wa-color-red-700: rgb(201, 37, 45);
+  --wa-color-orange-400: rgb(242, 148, 35);
+  --wa-color-orange-500: rgb(230, 134, 25);
+  --wa-color-orange-600: rgb(218, 123, 17);
+  --wa-color-orange-700: rgb(203, 111, 16);
+  --wa-color-green-400: rgb(51, 171, 132);
+  --wa-color-green-500: rgb(45, 157, 120);
+  --wa-color-green-600: rgb(38, 142, 108);
+  --wa-color-green-700: rgb(18, 128, 92);
+  --wa-color-celery-200: rgb(88, 224, 111);
+  --wa-color-celery-300: rgb(81, 210, 103);
+  --wa-color-celery-400: rgb(75, 195, 95);
+  --wa-color-celery-500: rgb(68, 181, 86);
+  --wa-color-celery-600: rgb(61, 167, 78);
+  --wa-color-celery-700: rgb(55, 153, 71);
+  --wa-color-chartreuse-300: rgb(155, 236, 84);
+  --wa-color-chartreuse-400: rgb(142, 222, 73);
+  --wa-color-chartreuse-500: rgb(133, 208, 68);
+  --wa-color-chartreuse-600: rgb(124, 195, 63);
+  --wa-color-chartreuse-700: rgb(115, 181, 58);
+  --wa-color-yellow-200: rgb(255, 226, 46);
+  --wa-color-yellow-300: rgb(250, 217, 0);
+  --wa-color-yellow-400: rgb(237, 204, 0);
+  --wa-color-yellow-500: rgb(223, 191, 0);
+  --wa-color-yellow-600: rgb(210, 178, 0);
+  --wa-color-yellow-700: rgb(196, 166, 0);
+  --wa-color-magenta-200: rgb(245, 107, 183);
+  --wa-color-magenta-300: rgb(236, 90, 170);
+  --wa-color-magenta-400: rgb(226, 73, 157);
+  --wa-color-magenta-500: rgb(216, 55, 144);
+  --wa-color-magenta-600: rgb(202, 41, 130);
+  --wa-color-magenta-700: rgb(188, 28, 116);
+  --wa-color-fuchsia-400: rgb(207, 62, 220);
+  --wa-color-fuchsia-500: rgb(192, 56, 204);
+  --wa-color-fuchsia-600: rgb(177, 48, 189);
+  --wa-color-fuchsia-700: rgb(162, 40, 173);
+  --wa-color-purple-400: rgb(157, 100, 225);
+  --wa-color-purple-500: rgb(146, 86, 217);
+  --wa-color-purple-600: rgb(134, 76, 204);
+  --wa-color-purple-700: rgb(122, 66, 191);
+  --wa-color-purple-800: rgb(111, 56, 177);
+  --wa-color-indigo-200: rgb(144, 144, 250);
+  --wa-color-indigo-300: rgb(130, 130, 246);
+  --wa-color-indigo-400: rgb(117, 117, 241);
+  --wa-color-indigo-500: rgb(103, 103, 236);
+  --wa-color-indigo-600: rgb(92, 92, 224);
+  --wa-color-indigo-700: rgb(81, 81, 211);
+  --wa-color-seafoam-200: rgb(38, 192, 199);
+  --wa-color-seafoam-300: rgb(35, 178, 184);
+  --wa-color-seafoam-400: rgb(32, 163, 168);
+  --wa-color-seafoam-500: rgb(27, 149, 154);
+  --wa-color-seafoam-600: rgb(22, 135, 140);
+  --wa-color-seafoam-700: rgb(15, 121, 125);
+
+  color: var(--wa-color-gray-900);
+  --wa-color-text-color: var(--wa-color-gray-900);
+  --wa-color-text-color-heavy: var(--wa-color-gray-800);
+  --wa-color-text-color-light: var(--wa-color-gray-700);
+  --wa-color-text-inactive: var(--wa-color-gray-600);
+  --wa-color-text-inactive-heavy: var(--wa-color-gray-500);
+
+  --wa-color-border-color: var(--wa-color-gray-200);
+  --wa-color-border-color-heavy: var(--wa-color-gray-400);
+  --wa-color-border-color-light: var(--wa-color-gray-75);
+  --wa-color-border-color-lightest: var(--wa-color-gray-100);
+
+  // -- accent -- //
+  --wa-color-accent-color: var(--wa-color-blue-500);
+  --wa-color-accent-heavy: var(--wa-color-blue-600);
+  --wa-color-accent-light: var(--wa-color-blue-400);
+  --wa-color-accent-text: var(--wa-color-blue-500);
+  --wa-color-accent-text-heavy: var(--wa-color-blue-600);
+  --wa-color-text-on-accent: var(--wa-color-gray-100);
+  --wa-color-accent-bg: var(--wa-color-blue-200);
+  --wa-color-accent-bg-heavy: var(--wa-color-blue-300);
+
+  // intractable item
+  --wa-color-bg-color: var(--wa-color-gray-100); // when resting
+  --wa-color-bg-heavy: var(--wa-color-gray-200); // when hovering, focus
+  --wa-color-bg-heaviest: var(--wa-color-gray-100); // when active (clicked)
+
+  --wa-color-bg-bedrock: var(--wa-color-gray-100); // i.e. <body/> background
+  --wa-color-bg-navigation: var(--wa-color-gray-200); // i.e. <body/> background
+  --wa-color-bg-overlay: var(--wa-color-gray-100); // e.g. button, input, etc
+  --wa-color-bg-modal: var(--wa-color-gray-100); // e.g. button, input, etc
+  --wa-color-bg-tooltip: var(--wa-color-gray-100); // e.g. button, input, etc
+  --wa-color-bg-tooltip-heavy: var(--wa-color-gray-200);
+  --wa-color-bg-dent: var(--wa-color-gray-200);
+
+  // -- error -- //
+  // might replace with 'error' theme
+  --wa-color-error-color: var(--wa-color-red-500);
+  --wa-color-error-heavy: var(--wa-color-red-600);
+  --wa-color-error-light: var(--wa-color-red-400);
+  --wa-color-error-bg: var(--wa-color-red-200);
+  --wa-color-error-bg-heavy: var(--wa-color-red-300);
+}
